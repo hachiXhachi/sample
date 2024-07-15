@@ -224,7 +224,6 @@
 </head>
 
 <body>
-    <div class="container">
         <div id="loginPage" class="login-form">
             <h2 class="text-center">Login</h2>
             <div class="form-group">
@@ -235,7 +234,6 @@
                 <button id="loginBtn">Login</button>
             </div>
         </div>
-    </div>
     <div class="hidden" id="indexPage">
         <div class="flipbook centered " id="flipbook">
             <div class="leaf">
@@ -326,8 +324,24 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script>
-
+    $(document).ready(function () {
+        $("#loginBtn").click(function () {
+            var password = $("#password").val();
+            // Simulate login success (replace with actual authentication logic)
+            if (password === "12281998") {
+                // Hide login page
+                $("#loginPage").removeClass("show").addClass("hidden");
+                // Show index page content
+                $("#indexPage").removeClass("hidden").addClass("show");
+                // Initialize flipbook or any other index page functionality
+                var flipBook = new FlipBook(document.getElementById("flipbook"));
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    });
     class FlipBook {
         constructor(bookElem) {
             this.elems = {
