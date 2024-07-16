@@ -6,7 +6,6 @@ $(document).ready(function () {
         'music/burnout.mp3',
         'music/dyefgam.mp3',
         'music/fbfriends.mp3',
-        'music/noumbrella.mp3',
         'music/the1.mp3',
         // Add more tracks as needed
     ];
