@@ -19,6 +19,8 @@ img {
     width: max-content;
 }
 
+
+
 .flipbook {
     margin: 3em auto;
     width: 400px;
@@ -178,7 +180,12 @@ body[onload] {
     margin-left: auto;
     margin-right: auto;
 }
-
+.container {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;    /* Vertical centering */
+    height: 100vh;          /* Full viewport height */
+}
 .form-group {
     margin-bottom: 15px;
 }
