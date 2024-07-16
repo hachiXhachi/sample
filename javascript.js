@@ -28,12 +28,13 @@ $(document).ready(function () {
             // Hide login page
             $("#loginPage").removeClass("show").addClass("hidden");
             // Show index page content with a delay
-            playRandomMusic();
+           
             setTimeout(function () {
                 $("#indexPage").removeClass("hidden").addClass("show");
                 // Initialize flipbook or any other index page functionality
                 var flipBook = new FlipBook(document.getElementById("flipbook"));
-            }, 600); // Delay in milliseconds
+            }, 600); 
+            playRandomMusic();// Delay in milliseconds
         } else {
             alert("Invalid username or password. Please try again.");
         }
