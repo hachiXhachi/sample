@@ -18,8 +18,26 @@ img {
     margin: auto;
     width: max-content;
 }
+.controls button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.controls button:hover {
+    background-color: #21867a;
+}
 
+.controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 
 .flipbook {
     margin: 3em auto;
