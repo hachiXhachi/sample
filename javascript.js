@@ -5,10 +5,12 @@ $(document).ready(function () {
         if (password === "12281998") {
             // Hide login page
             $("#loginPage").removeClass("show").addClass("hidden");
-            // Show index page content
-            $("#indexPage").removeClass("hidden").addClass("show");
-            // Initialize flipbook or any other index page functionality
-            var flipBook = new FlipBook(document.getElementById("flipbook"));
+            // Show index page content with a delay
+            setTimeout(function() {
+                $("#indexPage").removeClass("hidden").addClass("show");
+                // Initialize flipbook or any other index page functionality
+                var flipBook = new FlipBook(document.getElementById("flipbook"));
+            }, 500); // Delay in milliseconds
         } else {
             alert("Invalid username or password. Please try again.");
         }

@@ -16,7 +16,7 @@ img {
 
 .centered {
     margin: auto;
-    width: max-content;
+    width:fit-content;
 }
 .controls button {
     background-color: #2a9d8f;
@@ -43,11 +43,9 @@ img {
     margin: 3em auto;
     width: 400px;
     height: 300px;
-
     position: relative;
     transform-style: preserve-3d;
     perspective: 1000px;
-
     .leaf {
         position: absolute;
         transform-style: preserve-3d;
@@ -70,7 +68,6 @@ img {
 
             &.front {
                 transform: rotate3d(0, 1, 0, 0deg) translate3d(0, 0, 0.1px);
-
                 &:not(.external) {
                     box-shadow: inset 5px 0px 5px -5px #0005;
                 }
@@ -78,10 +75,12 @@ img {
             }
 
             &.back {
+
                 transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, 0.1px);
 
                 &:not(.external) {
                     box-shadow: inset -5px 0px 5px -5px #0005;
+                    
                 }
             }
         }
@@ -98,7 +97,11 @@ img {
     opacity: 0.6;
 }
 
-
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
 
 
 .title {
@@ -158,10 +161,6 @@ h2,
 h3 {
     font-family: cursive;
 }
-
-
-
-
 body[onload] {
     /*Cheesing the preview*/
     transform: scale(1.5);
@@ -180,7 +179,7 @@ body[onload] {
     }
 
     div.leaf:nth-child(4)>div:nth-child(1) {
-        background-color: #e76f51;
+        background-color: #e76f51 ;
     }
 }
 
