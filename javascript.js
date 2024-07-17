@@ -10,6 +10,7 @@ $(document).ready(function () {
         'music/the1.mp3',
         'music/bfgudbye.mp3',
         'music/birds.mp3',
+        'music/take.mp3',
         // Add more tracks as needed
     ];
 
