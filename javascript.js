@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const musicPlayer = document.getElementById('musicPlayer');
-    musicPlayer.volume = 0.3;
+    musicPlayer.volume = 0.5;
     // List of music tracks (relative paths to the music folder)
     const musicTracks = [
         'music/burnout.mp3',
