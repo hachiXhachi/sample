@@ -1,22 +1,45 @@
 $(document).ready(function () {
     const musicPlayer = document.getElementById('musicPlayer');
-
+    musicPlayer.volume = 0.3;
     // List of music tracks (relative paths to the music folder)
     const musicTracks = [
         'music/burnout.mp3',
         'music/dyefgam.mp3',
         'music/fbfriends.mp3',
+        'music/aboutu.mp3',
         'music/the1.mp3',
+        'music/bfgudbye.mp3',
+        'music/birds.mp3',
         // Add more tracks as needed
     ];
 
     // Function to play random music
+    let playedTracks = [];
+
+    // Function to play random music
     function playRandomMusic() {
-        const randomIndex = Math.floor(Math.random() * musicTracks.length);
-        const randomTrack = musicTracks[randomIndex];
+        if (playedTracks.length === musicTracks.length) {
+            // All tracks have been played, reset the playedTracks array
+            playedTracks = [];
+        }
+
+        // Filter out the tracks that have already been played
+        const remainingTracks = musicTracks.filter(track => !playedTracks.includes(track));
+
+        // Select a random track from the remaining tracks
+        const randomIndex = Math.floor(Math.random() * remainingTracks.length);
+        const randomTrack = remainingTracks[randomIndex];
+
+        // Add the selected track to the playedTracks array
+        playedTracks.push(randomTrack);
+
+        // Set the selected track as the source of the music player and play it
         musicPlayer.src = randomTrack;
         musicPlayer.play();
     }
+
+    // Event listener for when music ends to play another random track
+    musicPlayer.addEventListener('ended', playRandomMusic);
 
     // Event listener for when music ends to play another random track
     musicPlayer.addEventListener('ended', playRandomMusic);
@@ -27,12 +50,12 @@ $(document).ready(function () {
             // Hide login page
             $("#loginPage").removeClass("show").addClass("hidden");
             // Show index page content with a delay
-           
+
             setTimeout(function () {
                 $("#indexPage").removeClass("hidden").addClass("show");
                 // Initialize flipbook or any other index page functionality
                 var flipBook = new FlipBook(document.getElementById("flipbook"));
-            }, 600); 
+            }, 600);
             playRandomMusic();// Delay in milliseconds
         } else {
             alert("Invalid username or password. Please try again.");
